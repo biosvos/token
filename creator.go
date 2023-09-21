@@ -65,28 +65,3 @@ func newClaim(data []byte, now time.Time, duration time.Duration) (jwt.MapClaims
 	ret["exp"] = now.UTC().Add(duration).Unix()
 	return ret, nil
 }
-
-//type JWT struct {
-//	public *rsa.PublicKey
-//}
-
-//func (J *JWT) CreateToken(data []byte, duration time.Duration) (string, error) {
-//	token, err := NewToken(data, duration)
-//	if err != nil {
-//		return "", errors.WithStack(err)
-//	}
-//	privateKey, err := NewPrivateKey(keyFile)
-//	if err != nil {
-//		return "", errors.WithStack(err)
-//	}
-//	ret, err := token.SignedString(privateKey)
-//	if err != nil {
-//		return "", errors.WithStack(err)
-//	}
-//	return ret, nil
-//}
-
-//func (J *JWT) ParseToken(token string) (map[string]interface{}, error) {
-//	//TODO implement me
-//	panic("implement me")
-//}

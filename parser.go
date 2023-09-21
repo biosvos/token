@@ -35,16 +35,3 @@ func (t *TokeParser) Parse(token string) (map[string]any, error) {
 	claims := parsed.Claims.(jwt.MapClaims)
 	return claims, nil
 }
-
-//
-//func NewPrivateKey(keyFile string) (*rsa.PrivateKey, error) {
-//	keyContents, err := os.ReadFile(keyFile)
-//	if err != nil {
-//		return nil, errors.WithStack(err)
-//	}
-//	ret, err := jwt.ParseRSAPrivateKeyFromPEM(keyContents)
-//	if err != nil {
-//		return nil, errors.WithStack(err)
-//	}
-//	return ret, nil
-//}
